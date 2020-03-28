@@ -30,6 +30,10 @@ for filename in orginals:
     if place not in places:
         places.append(place)
 
+for filename in orginals:
+    place = extract_place(filename)
+    os.rename(filename, os.path.join(place, filename))
+
 
 make_place_directories(places)
 print(os.listdir())
